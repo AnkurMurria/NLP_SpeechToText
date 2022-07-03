@@ -17,9 +17,9 @@ def home():
 @app.route("/predict", methods=['POST'])
 @cross_origin()
 def predictRoute():
-    image = request.json['sound']
-    decodeSound(image, "audio123.wav")
-    result = speechToText.speech2Text("audio123.wav")
+    audio = request.json['sound']
+    decodeSound(audio, "audio.wav")
+    result = speechToText.speech2Text("audio.wav")
     return jsonify({"Result" : str(result)})
 
 
